@@ -12,6 +12,8 @@ CONFIG_PATH = os.path.join(BASE_DIR, "static", "manim", "config.json")
 VIDEO_DIR = os.path.join(BASE_DIR, "media", "videos", "NeuralNetwork", "480p15")
 VIDEO_FILENAME = "NeuralNetwork.mp4"
 
+import time
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     error = None
@@ -36,7 +38,9 @@ def index():
                 text=True
             )
 
-            video_url = url_for('serve_video')
+            # Add timestamp to bust browser cache
+            video_url = url_for('serve_video', t=int(time.time()))
+            neurons_input = ""  # clear input on success
 
         except subprocess.CalledProcessError as e:
             error = f"Manim rendering failed: {e.stderr or e.stdout}"
