@@ -22,3 +22,10 @@
 ## How to Use
 
 <p>To use the Neural Network Visualizer, <a href="https://neural-network-visualizer-zbv8.onrender.com">click here</a>! However, please note that this website is deployed using a tool known as render, and after 15 minutes of remaining idle, the render website will temporarily shut down until it's opened up again. Additionally, the manim script can take 1-2 minutes to generate your video.</p>
+
+### Alternative
+
+```
+git clone 
+cd your-repo-name
+```
