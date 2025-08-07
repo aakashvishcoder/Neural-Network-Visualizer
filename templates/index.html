@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Neural Network Visualizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <h1>Neural Network Visualizer</h1>
+
+  <form method="POST">
+    <label>Enter neurons per layer (space separated, max 6):</label><br/>
+    <input type="text" name="neurons" value="{{ neurons }}" required /><br/><br/>
+    <button type="submit">Render Network</button>
+  </form>
+
+  {% if error %}
+  <p style="color: red;">Error: {{ error }}</p>
+  {% endif %}
+
+  {% if video_url %}
+  <h2>Rendered Video</h2>
+  <video width="640" height="360" controls>
+    <source src="{{ video_url }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <br/>
+  <a href="{{ video_url }}" download="NeuralNetwork.mp4">Download Video</a>
+  {% endif %}
+</body>
+</html>
