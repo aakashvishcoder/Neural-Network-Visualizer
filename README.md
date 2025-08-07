@@ -28,4 +28,5 @@
 ```
 git clone 
 cd your-repo-name
+python app.py
 ```
