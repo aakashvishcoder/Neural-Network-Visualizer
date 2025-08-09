@@ -26,7 +26,7 @@
 ### Alternative
 
 ```
-git clone 
+git clone https://github.com/aakashvishcoder/Neural-Network-Visualizer.git
 cd your-repo-name
 python app.py
 ```
